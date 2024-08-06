@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SideMenu from "@/Components/Menu/SideMenu";
+import Topbar from "@/Components/TopBar/Topbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +18,9 @@ export default function RootLayout({ children }) {
           <div>
             <SideMenu />
           </div>
-          <div className="w-full rounded-xl border-2 border-[#f51524]">
-        {children}
+          <div className="w-[93vw] rounded-xl p-2 border-2 border-[#f51524]">
+            <Topbar />
+            {children}
           </div>
         </main>
       </body>

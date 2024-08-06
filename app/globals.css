@@ -3,5 +3,14 @@
 @tailwind utilities;
 
 body{
-  @apply bg-[#141319]
+  @apply bg-[#141319] text-white
+}
+
+@media (max-width: 640px) {
+  #block {
+    display: none;
+  }
+  #hidden {
+    display: block;
+  }
 }
