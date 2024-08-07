@@ -13,14 +13,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <main className="flex gap-5 p-1">
-          <div>
+      <body className={`${inter.className} p-1 overflow-hidden`}>
+        <main className="p-1 flex h-screen">
+          {/* Fixed SideMenu */}
+          <div className="fixed h-full w-20">
             <SideMenu />
           </div>
-          <div className="w-[93vw] rounded-xl p-2 border-2 border-[#f51524]">
-            <Topbar />
-            {children}
+
+          {/* Fixed Content Area */}
+          <div className="sha-1 ml-20 flex-1 h-full overflow-auto">
+            <div className="p-2 sha-2 h-full rounded-xl sha-1 flex flex-col">
+              {/* Topbar */}
+              <div className="flex-shrink-0">
+                <Topbar />
+              </div>
+
+              {/* Scrollable Content */}
+              <div className="flex-1 overflow-auto scrollbar-hide">
+                {children}
+              </div>
+            </div>
           </div>
         </main>
       </body>

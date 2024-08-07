@@ -4,11 +4,15 @@ import React, {useState} from "react";
 import Image from "next/image"
 import Link from "next/link"
 import Logo from "../../public/logo.png"
+import { MdHome } from "react-icons/md"; 
+import { GiConsoleController } from "react-icons/gi"; 
+import { GiWorld } from "react-icons/gi"; 
+import { GoSignIn } from "react-icons/go"; 
 
 const sideMenu = () => {
 
   return (
-    <section className='w-16 flex flex-col text-center h-[99vh] justify-between p-2 border-2 border-[#f51524] rounded-xl'>
+    <section className='sha w-16 flex flex-col text-center h-[99vh] justify-between p-2 rounded-xl'>
       <div className='w-12 h-12'>
         <Image
          src={Logo}
@@ -17,25 +21,28 @@ const sideMenu = () => {
         />
       </div>
       <div className="flex flex-col gap-y-7">
-        {/* Links like home games etc */}
         <Link 
           href="/"
+          className="hover:text-gray-400"
         >
-          H
+          <MdHome size={40}/>
         </Link>
         <Link
           href="/games"
+          className="hover:text-gray-400"
         >
-          G
+          <GiConsoleController size={40}/>
         </Link>
-      </div>
-      <div>
-        {/* sign in function  */}
         <Link
           href="sign-in"
         >
-          Sign In
+          <GoSignIn size={40} className="hover:text-gray-400"/>
         </Link>
+      </div>
+      <div>
+        <p>
+          <GiWorld size={40}/>
+        </p>
       </div>
     </section>
   )

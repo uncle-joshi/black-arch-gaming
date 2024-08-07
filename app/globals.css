@@ -14,3 +14,19 @@ body{
     display: block;
   }
 }
+
+/* globals.css or any other global CSS file */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* for Internet Explorer and Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+
+
+.sha, 
+.sha-1{
+  box-shadow: -4px -4px 15px #f51523, 5px 5px 15px #f51524;
+}
