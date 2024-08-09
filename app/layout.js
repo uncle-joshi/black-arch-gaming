@@ -21,8 +21,8 @@ export default function RootLayout({ children }) {
           </div>
 
           {/* Fixed Content Area */}
-          <div className="sha-1 ml-20 flex-1 h-full overflow-auto">
-            <div className="p-2 sha-2 h-full rounded-xl sha-1 flex flex-col">
+          <div className="sha-1 rounded-xl ml-24 flex-1 h-full overflow-auto">
+            <div className="p-2 h-full rounded-xl flex flex-col">
               {/* Topbar */}
               <div className="flex-shrink-0">
                 <Topbar />

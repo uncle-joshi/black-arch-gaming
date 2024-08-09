@@ -1,47 +1,42 @@
 "use client"
 
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { usePathname } from "next/navigation";
+import { links } from "./links";
 import Image from "next/image"
 import Link from "next/link"
 import Logo from "../../public/logo.png"
-import { MdHome } from "react-icons/md"; 
-import { GiConsoleController } from "react-icons/gi"; 
-import { GiWorld } from "react-icons/gi"; 
-import { GoSignIn } from "react-icons/go"; 
+import { GiWorld } from "react-icons/gi";
 
 const sideMenu = () => {
 
+  const pathname = usePathname();
+
   return (
-    <section className='sha w-16 flex flex-col text-center h-[99vh] justify-between p-2 rounded-xl'>
+    <section className='sha items-center w-20 flex flex-col text-center h-[99vh] justify-between p-2 rounded-xl'>
       <div className='w-12 h-12'>
         <Image
-         src={Logo}
-         alt="logo"
-         className="w-full h-full cursor-pointer rounded-full"
+          src={Logo}
+          alt="logo"
+          className="w-full h-full cursor-pointer rounded-full"
         />
       </div>
       <div className="flex flex-col gap-y-7">
-        <Link 
-          href="/"
-          className="hover:text-gray-400"
-        >
-          <MdHome size={40}/>
-        </Link>
-        <Link
-          href="/games"
-          className="hover:text-gray-400"
-        >
-          <GiConsoleController size={40}/>
-        </Link>
-        <Link
-          href="sign-in"
-        >
-          <GoSignIn size={40} className="hover:text-gray-400"/>
-        </Link>
+        {links.map((link) => (
+          <Link
+            href={link.href}
+            key={link.name}
+            className={`items-center text-center w-auto hover:text-gray-300 transition border-b-2 border-transparent hover:border-[#f51524] 
+              ${pathname === link.href ? "border-yellow-600" : "border-transparent"
+              }`}
+          >
+            <link.icon size={40} className="text-gray-400 p-1" />
+          </Link>
+        ))}
       </div>
       <div>
         <p>
-          <GiWorld size={40}/>
+          <GiWorld size={40} />
         </p>
       </div>
     </section>

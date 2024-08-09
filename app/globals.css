@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-  @apply bg-[#141319] text-white
+  @apply bg-[#141319] text-white p-1 m-1 
 }
 
 @media (max-width: 640px) {
@@ -15,7 +15,6 @@ body{
   }
 }
 
-/* globals.css or any other global CSS file */
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
@@ -29,4 +28,8 @@ body{
 .sha, 
 .sha-1{
   box-shadow: -4px -4px 15px #f51523, 5px 5px 15px #f51524;
+}
+
+.scrollbar::-webkit-scrollbar{
+  display: none;
 }

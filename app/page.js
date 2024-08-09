@@ -1,4 +1,4 @@
-import Carousel from "@/Components/Carousal/Carousel";
+import Carousel from "@/Components/Carousel/Carousel";
 import Pgcards from "@/Components/GamesCard/PopularGamesCards/Pgcards";
 
 export default function Home() {

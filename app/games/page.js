@@ -1,8 +1,17 @@
-import React from 'react'
+export const metadata = {
+  title: "BLACK-ARCH GAMING/games",
+  description: "games page",
+};
+
+import CategoriesCarousel from "@/Components/Carousel/CategoriesCarousel";
 
 const Games = () => {
   return (
-    <div>Games</div>
+    <section className="p-2">
+      <div>
+        <CategoriesCarousel />
+      </div>
+    </section>
   )
 }
 
