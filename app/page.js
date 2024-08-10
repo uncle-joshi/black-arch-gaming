@@ -7,8 +7,8 @@ export default function Home() {
       <div className="my-1">
         <Carousel />
       </div>
-      <div className="my-1">
-        <h1>POPULAR GAMES</h1>
+      <div className="mt-3">
+        <div className="text-2xl p-3">POPULAR GAMES</div>
         <div>
           <Pgcards />
         </div>

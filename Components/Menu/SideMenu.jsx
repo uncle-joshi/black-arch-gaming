@@ -8,7 +8,8 @@ import Link from "next/link"
 import Logo from "../../public/logo.png"
 import { GiWorld } from "react-icons/gi";
 
-const sideMenu = () => {
+
+const SideMenu = () => {
 
   const pathname = usePathname();
 
@@ -43,4 +44,4 @@ const sideMenu = () => {
   )
 }
 
-export default sideMenu;
+export default SideMenu;
