@@ -14,7 +14,7 @@ const SideMenu = () => {
   const pathname = usePathname();
 
   return (
-    <section className='sha items-center w-20 flex flex-col text-center h-[99vh] justify-between p-2 rounded-xl'>
+    <section id="sha-2" className='items-center w-20 flex flex-col text-center h-[94vh] justify-between p-2 rounded-xl'>
       <div className='w-12 h-12'>
         <Image
           src={Logo}

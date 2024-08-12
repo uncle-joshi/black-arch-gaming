@@ -24,7 +24,7 @@ const Topbar = () => {
   }, []);
 
   return (
-    <section className='w-full h-16 justify-between p-4 flex border-2 border-[#f51524] rounded-xl'>
+    <section id='sha-2' className='w-full h-16 justify-between p-4 flex border-2 border-none rounded-xl'>
       <div className='block md:block sm:hidden' id='block'>
         BLACK-ARCH GAMING
       </div>

@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
+
 import "./globals.css";
+
 import SideMenu from "@/Components/Menu/SideMenu";
 import Topbar from "@/Components/TopBar/Topbar";
 
@@ -13,15 +15,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} p-1 overflow-hidden`}>
-        <main className="p-1 flex h-screen">
+      <body className={`${inter.className} overflow-hidden`}>
+        <main className="p-1 flex h-screen md:p-4 lg:p-6">
           {/* Fixed SideMenu */}
           <div className="fixed h-full w-20">
             <SideMenu />
           </div>
 
           {/* Fixed Content Area */}
-          <div className="sha-1 rounded-xl ml-24 flex-1 h-full overflow-auto">
+          <div id="sha-2" className="sha-1 rounded-xl ml-24 flex-1 h-full overflow-auto">
             <div className="p-2 h-full rounded-xl flex flex-col">
               {/* Topbar */}
               <div className="flex-shrink-0">

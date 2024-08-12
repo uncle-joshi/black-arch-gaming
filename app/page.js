@@ -4,7 +4,7 @@ import Pgcards from "@/Components/GamesCard/PopularGamesCards/Pgcards";
 export default function Home() {
   return (
     <section>
-      <div className="my-1">
+      <div className="p-4">
         <Carousel />
       </div>
       <div className="mt-3">

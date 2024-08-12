@@ -7,7 +7,7 @@ import CategoriesCarousel from "@/Components/Carousel/CategoriesCarousel";
 
 const Games = () => {
   return (
-    <section className="p-2">
+    <section className="p-5">
       <div>
         <CategoriesCarousel />
       </div>
