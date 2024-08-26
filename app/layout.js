@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import SideMenu from "@/Components/Menu/SideMenu";
+import Mobilemenu from "@/Components/Menu/Mobilemenu";
 import Topbar from "@/Components/TopBar/Topbar";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,14 +17,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} overflow-hidden`}>
-        <main className="p-1 flex h-screen md:p-4 lg:p-6">
-          {/* Fixed SideMenu */}
-          <div className="fixed h-full w-20">
+        <main className="p-2 flex h-screen md:p-4 lg:p-6">
+          {/* Fixed SideMenu - Hidden on Mobile */}
+          <div className="fixed h-full w-20 hidden md:block">
             <SideMenu />
           </div>
 
           {/* Fixed Content Area */}
-          <div id="sha-2" className="sha-1 rounded-xl ml-24 flex-1 h-full overflow-auto">
+          <div className="sha-2 rounded-xl ml-0 md:ml-24 flex-1 h-full overflow-auto">
             <div className="p-2 h-full rounded-xl flex flex-col">
               {/* Topbar */}
               <div className="flex-shrink-0">
@@ -35,6 +36,11 @@ export default function RootLayout({ children }) {
                 {children}
               </div>
             </div>
+          </div>
+
+          {/* Mobile Menu Fixed at the Bottom on Mobile Devices */}
+          <div className="fixed inset-x-0 bottom-0 md:hidden">
+            <Mobilemenu />
           </div>
         </main>
       </body>

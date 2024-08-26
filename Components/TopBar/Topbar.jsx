@@ -17,19 +17,19 @@ const Topbar = () => {
     window.addEventListener("online", updateStatus);
     window.addEventListener("offline", updateStatus);
 
-    return () => {
+    return ( ) => {
       window.removeEventListener("online", updateStatus);
       window.removeEventListener("offline", updateStatus);
     };
   }, []);
 
   return (
-    <section id='sha-2' className='w-full h-16 justify-between p-4 flex border-2 border-none rounded-xl'>
+    <section className='w-full h-16 justify-between p-4 flex  border-2 sha-1 border-none rounded-xl'>
       <div className='block md:block sm:hidden' id='block'>
         BLACK-ARCH GAMING
       </div>
       <div className='hidden md:hidden sm:block' id='hidden'>
-        B-A-G
+        BLACK-ARCH
       </div>
       <div className="flex items-center" id="status">
         {isOnline === null ? (

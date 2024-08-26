@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#141319] text-white;
+  @apply bg-gray-800 text-white 
 }
 
 @media (max-width: 640px) {
@@ -24,27 +24,141 @@ body {
   scrollbar-width: none; /* for Firefox */
 }
 
-
-.sha, 
-.sha-1{
-  box-shadow: -4px -4px 15px #f51523, 5px 5px 15px #f51524;
-}
-
 .scrollbar::-webkit-scrollbar{
   display: none;
 }
 
-#sha-2 {
-  box-shadow: inset 0 15px 16px rgba(245, 21, 36, 1), 
-              inset 0 -14px 16px rgba(245, 21, 36, 1);
+ 
+.sha-1{
+  box-shadow:inset -3px -3px 15px  #e81cff ,inset -3px -3px 15px #e81cff;
 }
 
-.slick-slide {
+.sha-2{
+  box-shadow: inset -2px -2px 15px #40c9ff, inset -3px -3px 15px #40c9ff;
+}
+
+.textSize{
+  font-style: italic;
+}
+
+.card {
+  position: relative;
+  width: 190px;
+  height: 254px;
+  background-color: #000;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: end;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  margin-left: 12px;
 }
 
-.slick-dots {
-  bottom: -20px; /* Adjust as needed */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 200px;
+  height: 264px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.heading {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.card p:not(.heading) {
+  font-size: 14px;
+}
+
+.card p:last-child {
+  color: #e81cff;
+  font-weight: 600;
+}
+
+.card:hover::after {
+  filter: blur(30px);
+}
+
+.card:hover::before {
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+}
+
+.side-menu {
+  border-radius: 8px;
+  padding: 2px; /* Add padding to show the border gradient */
+  background-color: #000;
+  position: relative;
+  z-index: 0; /* Ensure the gradient is behind the content */
+}
+
+.side-menu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  /* background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%); */
+  z-index: -2; /* Ensure the gradient background is behind everything */
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}.side-menu {
+  position: relative;
+  border-radius: 8px;
+  padding: 2px;
+  background-color: #000;
+}
+
+.side-menu::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 10px;
+  /* background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%); */
+  z-index: -1;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.side-menu::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+  z-index: -2;
+}
+
+.side-menu:hover::before {
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+}
+
+.side-menu:hover::after {
+  filter: blur(30px);
 }

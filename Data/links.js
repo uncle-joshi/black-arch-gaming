@@ -16,7 +16,7 @@ export const links = [
     },
     {
         name: "store",
-        href: "/store",
+        href: "/gamestore",
         icon: AiOutlineAppstoreAdd
     },
     {
